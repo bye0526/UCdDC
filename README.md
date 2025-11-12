@@ -18,7 +18,7 @@ project_root/
 │
 ├── code/
 │   ├── WQS_en.py                 # Weighted Quantile Sum regression & visualization
-│   ├── SEM.py                    # Structural Equation Modeling (path analysis)
+│   ├── SEM.R                    # Structural Equation Modeling (path analysis)
 │   ├── ML_en.py                  # ML models (XGB, RF, LGBM), SHAP, and scenario simulations
 │
 └── Result/
@@ -32,9 +32,9 @@ project_root/
 
 ```mermaid
 graph TD
-    A[metadata2020.xlsx] -->|merge/clean| B[exposure.xlsx]
+    A[Metadata2025.xlsx] -->|merge/clean| B[exposure.xlsx]
     B -->|input| C[WQS_en.py]
-    B -->|input| D[SEM.py]
+    B -->|input| D[SEM.R]
     E[ML2025.xlsx] -->|input| F[ML_en.py]
 
     C --> G[Exposure Weights & WQS Figures]
@@ -52,8 +52,8 @@ graph TD
 
 | File | Description | Main Usage |
 |------|--------------|------------|
-| **metadata2020.xlsx** | Raw demographic data (age, gender, BMI, occupation, distance from source) | Contextual metadata |
-| **exposure.xlsx** | Exposure dose calculations for soil, water, diet pathways | Input for WQS & SEM |
+| **Metadata2025.xlsx** | Raw demographic data (age, gender, BMI, occupation, distance from source) | Contextual metadata |
+| **Exposure.xlsx** | Exposure dose calculations for soil, water, diet pathways | Input for WQS & SEM |
 | **ML2025.xlsx** | Processed feature-target dataset | Input for ML models |
 
 **Exposure pathways include:**  
@@ -76,7 +76,7 @@ Aggregates (`Diet_total`, `Env_total_calc`) are computed internally.
 
 ---
 
-### **2. SEM.py**
+### **2. SEM.R**
 - Structural Equation Modeling for direct/indirect effects among soil Cd, rice Cd, and urinary Cd.  
 - Provides model fit indices and path diagrams.
 
@@ -122,7 +122,7 @@ pip install numpy pandas scikit-learn xgboost lightgbm shap statsmodels matplotl
 
 ```bash
 python code/WQS_en.py
-python code/SEM.py
+python code/SEM.R
 python code/ML_en.py
 ```
 
