@@ -5,9 +5,7 @@ This repository provides a **reproducible analytical pipeline** for evaluating m
 2. **Structural Equation Modeling (SEM)** — identifies direct and indirect causal pathways among environmental media and human biomarkers.  
 3. **Machine Learning (ML)** — models nonlinear associations, explains variable importance (via SHAP), and simulates exposure reduction scenarios.
 
-All scripts are designed for **publication-grade reproducibility**, following *Nature*-style figure conventions.
 
----
 
 ## **Project Structure**
 
